@@ -23,4 +23,4 @@ class Post(models.Model):
         ordering = ('-publish',)
 
     def __str__(self):
-        self.title
+        return self.title
