@@ -16,4 +16,6 @@
     </form>
 {% endif %}
 
+<a href="{% url 'blog:post_detail' post.publish.year post.publish.month post.publish.day post.slug %}">Go back</a>
+
 {% endblock content %}

@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 
-from .forms import EmailPostForm
+from .forms import EmailPostForm, CommentForm
 from .models import Post
 
 import pdb
@@ -39,8 +39,28 @@ class PostListView(ListView):
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post, status='published',
                              publish__year=year, publish__month=month, publish__day=day)
+
+    comments = post.comments.filter(active=True)
+
+    new_comment = None
+
+    if request.method == "POST":
+        # A comment was posted.
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            # Creating Comment object but won't save it to database.
+            new_comment = comment_form.save(commit=False)
+
+            # assign the current post to the comment.
+            new_comment.post = post
+
+            # Save the comment to database.
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+
     return render(request, 'blog/post/detail.html', {
-        'post': post
+        'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form
     })
 
 
