@@ -7,7 +7,7 @@ from .models import Post, Comment
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     # Display the post list fields specified in the tuple.
-    list_display = ('title', 'slug', 'author', 'publish', 'status')
+    list_display = ('title', 'slug', 'author', 'publish', 'tags', 'status')
     # Filter results by the fields included in the tuple.
     list_filter = ('status', 'created', 'publish', 'author')
     search_fields = ('title', 'body')  # Specifies searchable fields
