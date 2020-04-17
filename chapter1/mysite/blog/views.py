@@ -2,7 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from taggit.models import Tag
 from .forms import EmailPostForm, CommentForm
@@ -59,6 +59,7 @@ class PostListView(ListView):
             kwargs['tag'] = tag
 
         return kwargs
+
 
 
 def post_detail(request, year, month, day, post):
