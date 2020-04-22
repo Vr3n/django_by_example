@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from .secret_keys import SECRET_KEYS as sc
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,12 +26,24 @@ SECRET_KEY = '(#05&4iwsjxhq(p^v_g_s%j=nv^0fy#!gg#q4=6eh=dnq!bzba'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mysite.com',
+    'localhost',
+    '127.0.0.1'
+]
 
+SOCIAL_AUTH_FACEBOOK_KEY = sc['soc_auth_facebook_key']
+SOCIAL_AUTH_FACEBOOK_SECRET = sc['soc_auth_facebook_secret']
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_GOOGLE_KEY = sc['soc_auth_google_key']
+SOCIAL_AUTH_GOOGLE_SECRET = sc['soc_auth_google_secret']
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 # Application definition
@@ -43,6 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # THIRD PARTY APPS.
+    'social_django',
 ]
 
 MIDDLEWARE = [
