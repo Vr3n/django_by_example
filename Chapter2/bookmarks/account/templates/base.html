@@ -33,6 +33,16 @@
         </span>
     </div>
     <div class="content">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>
+                    {{ message|safe }}
+                    <a href="#" class="close"></a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         {% block content %}
         {% endblock content %}
     </div>
