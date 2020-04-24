@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-
-{% block title %}
-
-<h1>{{ image.title }}</h1>
-
 {% load thumbnail  %}
+
+{% block title %}{{ image.title }}{% endblock title %}
+
+
+{% block content %}
+
 {% thumbnail image.image "300" as im %}
 <a href="{{ image.image.url }}" >
     <img src="{{ image.image.url }}">
@@ -16,8 +17,7 @@
 <div class="image-info">
     <div>
         <span class="count">
-            <span class="total">{{ total_likes }}</span>
-        {{ total_likes }} like{{ total_likes|pluralize }}
+            <span class="total">{{ total_likes }}</span> like{{ total_likes|pluralize }}
         </span>
         <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button">
             {% if request.user not in users_like %}
@@ -29,15 +29,43 @@
     </div>
     {{ image.description|linebreaks }}
 </div>
+{% endwith %}
 <div class="image-likes">
-    {% for user in image.user_like.all %}
+    {% for user in image.users_like.all %}
         <div>
             <img src="{{ user.profile.photo.url }}" alt="">
                 <p>{{ user.first_name }}</p>
         </div>
     {% empty %}
-        Nobody liked this image yet.
+        <p>Nobody liked this image yet.</p>
     {% endfor %}
 </div>
-{% endwith %}
-{% endblock title %}
+
+{% endblock content %}
+
+{% block domready %}
+
+$('a.like').click(function(e){
+    e.preventDefault();
+    $.post('{% url "images:like" %}', {
+        id: $(this).data('id'),
+        action: $(this).data('action')
+        }, function(data){
+            if (data['status'] == 'ok') {
+                let previous_action = $('a.like').data('action');
+
+                // toggle data-action
+                $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
+
+                // toggle link text
+                $('a.like').text(previous_action == 'like' ? 'Unlike' : 'Like');
+
+                // update total likes
+                let previous_likes = parseInt($('span.count .total').text());
+                $('span.count .total').text(previous_action == 'like' ? previous_likes + 1 : previous_likes - 1);
+            }
+        }
+    );
+});
+
+{% endblock domready %}

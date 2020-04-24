@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     'mysite.com',
     'localhost',
     '127.0.0.1',
-    '02e2b68a.ngrok.io'
+    '3dac388e.ngrok.io'
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = sc['soc_auth_facebook_key']
