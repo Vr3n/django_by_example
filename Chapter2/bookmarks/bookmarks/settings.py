@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     'mysite.com',
     'localhost',
     '127.0.0.1',
-    'b2d52734.ngrok.io'
+    '02e2b68a.ngrok.io'
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = sc['soc_auth_facebook_key']
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
     # THIRD PARTY APPS.
     'social_django',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [

@@ -2,6 +2,6 @@
   if (window.myBookmarklet != undefined) {
     myBookmarklet();
   } else {
-    document.body.appendChild(document.createElement('script')).src = 'https://b2d52734.ngrok.io/static/js/bookmarklet.js?r='+Math.floor(Math.random() * 99999999999999999999);
+    document.body.appendChild(document.createElement('script')).src = 'https://02e2b68a.ngrok.io/static/js/bookmarklet.js?r='+Math.floor(Math.random() * 99999999999999999999);
   }
 })();
