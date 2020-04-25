@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
 from .secret_keys import SECRET_KEYS as sc
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,6 +26,7 @@ SECRET_KEY = '(#05&4iwsjxhq(p^v_g_s%j=nv^0fy#!gg#q4=6eh=dnq!bzba'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = [
     'mysite.com',
@@ -46,6 +48,10 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
 ]
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
 
 # Application definition
 
