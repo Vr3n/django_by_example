@@ -160,3 +160,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# REDIS CONFIGURATION.
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6655
+REDIS_DB = 0
