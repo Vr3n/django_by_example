@@ -7,7 +7,6 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 
 
-
 from .tasks import order_created
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
