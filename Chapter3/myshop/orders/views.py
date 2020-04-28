@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from .tasks import order_created
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
@@ -22,6 +23,9 @@ def order_create(request):
                 )
             # clear the cart.
             cart.clear()
+
+            # launch synchronous task.
+            order_created.delay(order.id)
             return render(request, 'orders/order/created.html', {
                 'order': order
             })
