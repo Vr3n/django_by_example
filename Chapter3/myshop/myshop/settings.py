@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from . import secrets
+from braintree import Configuration, Environment
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +132,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# BRAINTREE PAYMENT GATEWAY CONFIGURATION.
+BRAINTREE_MERCHANT_ID = secrets.BRAINTREE_MERCHANT_ID
+BRAINTREE_PUBLIC_KEY = secrets.BRAINTREE_PUBLIC_KEY
+BRAINTREE_PRIVATE_KEY = secrets.BRAINTREE_PRIVATE_KEY
+
+Configuration.configure(
+    Environment.Sandbox,  # when you go live change this to Environment.Production
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
