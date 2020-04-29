@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 17:12+0530\n"
+"POT-Creation-Date: 2020-04-29 22:16+0530\n"
 "PO-Revision-Date: 2020-04-29 11:08+0000\n"
 "Last-Translator: b'  <vicky@gmail.com>'\n"
 "Language-Team: \n"
@@ -19,31 +19,131 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: cart/forms.py:9
+#: cart/forms.py:9 cart/templates/cart/detail.html:15
 msgid "Quantity"
 msgstr "मात्रा"
+
+#: cart/templates/cart/detail.html:5
+#, fuzzy
+#| msgid "Your cart:"
+msgid "Your shopping cart"
+msgstr "आपकी कार्ट:"
+
+#: cart/templates/cart/detail.html:9 cart/templates/cart/detail.html:13
+#, fuzzy
+#| msgid "Your cart:"
+msgid "Your Shopping cart"
+msgstr "आपकी कार्ट:"
+
+#: cart/templates/cart/detail.html:14
+#, fuzzy
+#| msgid "Products"
+msgid "Product"
+msgstr "उत्पादों"
+
+#: cart/templates/cart/detail.html:16 cart/templates/cart/detail.html:40
+msgid "Remove"
+msgstr "इसे मिटाओ"
+
+#: cart/templates/cart/detail.html:17
+msgid "Unit Price"
+msgstr "यूनिट मूल्य"
+
+#: cart/templates/cart/detail.html:18
+msgid "Price"
+msgstr "मूल्य"
+
+#: cart/templates/cart/detail.html:49
+msgid "Subtotal"
+msgstr "उप-मूल्य"
+
+#: cart/templates/cart/detail.html:55 cart/templates/cart/detail.html:65
+msgid "Total"
+msgstr "कुल कीमत"
+
+#: cart/templates/cart/detail.html:56
+msgid "off"
+msgstr "छूट"
+
+#: cart/templates/cart/detail.html:73
+#: shop/templates/shop/product/detail.html:24
+msgid "People Who bought this also bought"
+msgstr "इसे खरीदने वाले लोगों ने भी खरीदारी की"
+
+#: cart/templates/cart/detail.html:84
+msgid "Apply a coupon"
+msgstr "एक कूपन लागू करें"
+
+#: cart/templates/cart/detail.html:87
+msgid "Apply"
+msgstr "लागू करें"
+
+#: cart/templates/cart/detail.html:91
+msgid "Continue Shopping"
+msgstr "खरीदारी जारी रखें"
+
+#: cart/templates/cart/detail.html:92
+msgid "Checkout"
+msgstr "चेक आउट"
 
 #: coupons/forms.py:7
 msgid "Coupon code"
 msgstr "कूपन कोड"
 
-#: myshop/settings.py:122
+#: myshop/settings.py:123
 msgid "English"
 msgstr "अंग्रेज़ी"
 
-#: myshop/settings.py:123
+#: myshop/settings.py:124
 msgid "Hindi"
 msgstr "हिन्दी"
+
+#: payment/templates/payment/canceled.html:5
+msgid "Your payment has not been processsed"
+msgstr "आपके भुगतान को संसाधित नहीं किया गया है"
+
+#: payment/templates/payment/canceled.html:7
+msgid "There was a problem processing your payment"
+msgstr "आपके भुगतान को संसाधित करने में समस्या थी"
+
+#: payment/templates/payment/done.html:4
+msgid "Your payment was successfull"
+msgstr "आपका भुगतान सफल रहा"
+
+#: payment/templates/payment/done.html:6
+msgid "Your payment has been processed successfully"
+msgstr "आपके भुगतान को सफलतापूर्वक संसाधित किया गया है"
+
+#: payment/templates/payment/process.html:3
+#: payment/templates/payment/process.html:7
+msgid "Pay by credit card"
+msgstr "क्रेडिट कार्ड द्वारा भुगतान"
+
+#: payment/templates/payment/process.html:9
+msgid "Card Number"
+msgstr "कार्ड नंबर"
+
+#: payment/templates/payment/process.html:11
+msgid "CVV"
+msgstr "सीवीवी"
+
+#: payment/templates/payment/process.html:13
+msgid "Expiration Date"
+msgstr "समाप्ति तिथि"
 
 #: shop/templates/shop/base.html:17
 msgid "My shop"
 msgstr "मेरी दुकान"
 
-#: shop/templates/shop/base.html:23
+#: shop/templates/shop/base.html:22
+msgid "Language"
+msgstr "भाषा"
+
+#: shop/templates/shop/base.html:37
 msgid "Your cart:"
 msgstr "आपकी कार्ट:"
 
-#: shop/templates/shop/base.html:28
+#: shop/templates/shop/base.html:42
 msgid "Your cart is empty"
 msgstr "आपकी कार्ट खाली है."
 
@@ -63,3 +163,6 @@ msgstr "श्रेणियाँ"
 #: shop/templates/shop/product/list.html:14
 msgid "All"
 msgstr "सब"
+
+#~ msgid "Prople Who bought this also bought"
+#~ msgstr "इसे खरीदने वाले लोगों ने भी खरीदारी की"

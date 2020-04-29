@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 17:12+0530\n"
+"POT-Creation-Date: 2020-04-29 22:16+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,125 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cart/forms.py:9
+#: cart/forms.py:9 cart/templates/cart/detail.html:15
 msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:5
+msgid "Your shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:9 cart/templates/cart/detail.html:13
+msgid "Your Shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:14
+msgid "Product"
+msgstr ""
+
+#: cart/templates/cart/detail.html:16 cart/templates/cart/detail.html:40
+msgid "Remove"
+msgstr ""
+
+#: cart/templates/cart/detail.html:17
+msgid "Unit Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:18
+msgid "Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:49
+msgid "Subtotal"
+msgstr ""
+
+#: cart/templates/cart/detail.html:55 cart/templates/cart/detail.html:65
+msgid "Total"
+msgstr ""
+
+#: cart/templates/cart/detail.html:56
+msgid "off"
+msgstr ""
+
+#: cart/templates/cart/detail.html:73
+#: shop/templates/shop/product/detail.html:24
+msgid "People Who bought this also bought"
+msgstr ""
+
+#: cart/templates/cart/detail.html:84
+msgid "Apply a coupon"
+msgstr ""
+
+#: cart/templates/cart/detail.html:87
+msgid "Apply"
+msgstr ""
+
+#: cart/templates/cart/detail.html:91
+msgid "Continue Shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:92
+msgid "Checkout"
 msgstr ""
 
 #: coupons/forms.py:7
 msgid "Coupon code"
 msgstr ""
 
-#: myshop/settings.py:122
+#: myshop/settings.py:123
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:123
+#: myshop/settings.py:124
 msgid "Hindi"
+msgstr ""
+
+#: payment/templates/payment/canceled.html:5
+msgid "Your payment has not been processsed"
+msgstr ""
+
+#: payment/templates/payment/canceled.html:7
+msgid "There was a problem processing your payment"
+msgstr ""
+
+#: payment/templates/payment/done.html:4
+msgid "Your payment was successfull"
+msgstr ""
+
+#: payment/templates/payment/done.html:6
+msgid "Your payment has been processed successfully"
+msgstr ""
+
+#: payment/templates/payment/process.html:3
+#: payment/templates/payment/process.html:7
+msgid "Pay by credit card"
+msgstr ""
+
+#: payment/templates/payment/process.html:9
+msgid "Card Number"
+msgstr ""
+
+#: payment/templates/payment/process.html:11
+msgid "CVV"
+msgstr ""
+
+#: payment/templates/payment/process.html:13
+msgid "Expiration Date"
 msgstr ""
 
 #: shop/templates/shop/base.html:17
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/base.html:23
+#: shop/templates/shop/base.html:22
+msgid "Language"
+msgstr ""
+
+#: shop/templates/shop/base.html:37
 msgid "Your cart:"
 msgstr ""
 
-#: shop/templates/shop/base.html:28
+#: shop/templates/shop/base.html:42
 msgid "Your cart is empty"
 msgstr ""
 

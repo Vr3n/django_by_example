@@ -21,7 +21,6 @@ def payment_process(request):
     order = get_object_or_404(Order, id=order_id)
 
     if request.method == "POST":
-        pdb.set_trace()
         # retrieve nonce
         nonce = request.POST.get('payment_method_nonce', None)
 

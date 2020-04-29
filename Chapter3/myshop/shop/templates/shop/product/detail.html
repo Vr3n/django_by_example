@@ -21,7 +21,7 @@
     {{ product.description|linebreaks }}
     {% if recommended_products %}
     <div class="recommendations">
-        <h3>{% trans "Prople Who bought this also bought" %}</h3>
+        <h3>{% trans "People Who bought this also bought" %}</h3>
         {% for p in recommended_products %}
         <div class="item">
             <a href="{{ p.get_absolute_url }}"><img
