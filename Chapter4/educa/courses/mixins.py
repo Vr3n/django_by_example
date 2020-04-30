@@ -12,7 +12,7 @@ class OwnerMixin(object):
         return qs.filter(owner=self.request.user)
 
 
-class OwnerEditMixin:
+class OwnerEditMixin(object):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
@@ -20,13 +20,11 @@ class OwnerEditMixin:
 
 class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
     model = Course
-    fields = [
-        'subject', 'title', 'slug', 'overview'
-    ]
+    fields = ['subject', 'title', 'slug', 'overview']
     success_url = reverse_lazy('manage_course_list')
 
 
-class OwnerCourseEditMixin(OwnerEditMixin, OwnerCourseMixin):
+class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
     fields = ['subject', 'title', 'slug', 'overview']
     success_url = reverse_lazy('manage_course_list')
     template_name = 'courses/manage/course/form.html'
