@@ -1,5 +1,8 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .models import Course
+
+import pdb
 # Create your mixins here.
 
 
@@ -9,17 +12,21 @@ class OwnerMixin(object):
         return qs.filter(owner=self.request.user)
 
 
-class OwnerEditMixin(object):
+class OwnerEditMixin:
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
 
 
-class OwnerCourseMixin(OwnerMixin):
+class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
     model = Course
+    fields = [
+        'subject', 'title', 'slug', 'overview'
+    ]
+    success_url = reverse_lazy('manage_course_list')
 
 
-class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
+class OwnerCourseEditMixin(OwnerEditMixin, OwnerCourseMixin):
     fields = ['subject', 'title', 'slug', 'overview']
-    success_url = reverse_lazy('manage_couse_list')
+    success_url = reverse_lazy('manage_course_list')
     template_name = 'courses/manage/course/form.html'
