@@ -1,0 +1,58 @@
+[
+{
+  "model": "courses.subject",
+  "pk": 1,
+  "fields": {
+    "title": "Mathematics",
+    "slug": "mathematics"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 2,
+  "fields": {
+    "title": "Science",
+    "slug": "science"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 3,
+  "fields": {
+    "title": "Computer Science",
+    "slug": "computer-science"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "English Literature",
+    "slug": "english-literature"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 5,
+  "fields": {
+    "title": "Ethical Hacking",
+    "slug": "ethical-hacking"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 6,
+  "fields": {
+    "title": "Data Analysis",
+    "slug": "data-analysis"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 7,
+  "fields": {
+    "title": "Economics",
+    "slug": "economics"
+  }
+}
+]
