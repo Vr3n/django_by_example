@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'students',
     'embed_video',
     'memcache_status',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # CACHE_MIDDLEWARE_ALIAS = 'default'
 # CACHE_MIDDLEWARE_SECONDS = 60 * 15  # 15 minutes
