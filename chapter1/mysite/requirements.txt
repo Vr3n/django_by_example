@@ -1,5 +1,5 @@
 autopep8==1.5.1
-Django==2.2.12
+Django==2.2.22
 django-taggit==1.2.0
 Markdown==3.2.1
 psycopg2==2.8.5
