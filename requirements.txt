@@ -32,7 +32,7 @@ polib==1.1.0
 psycopg2==2.8.5
 pycodestyle==2.5.0
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyperclip==1.8.0
 Pyphen==0.9.5
 python-memcached==1.59
