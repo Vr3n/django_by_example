@@ -20,7 +20,7 @@ django-parler==1.9.2
 django-rosetta==0.9.4
 django-taggit==1.2.0
 djangorestframework==3.9.1
-flower==0.9.4
+flower==1.2.0
 html5lib==1.0.1
 humanize==0.5.1
 idna==2.9
